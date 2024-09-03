@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Form</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            
+            color: rgb(0, 0, 0);
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+       
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <form action="/submit_admission_form" method="post" enctype="multipart/form-data">
+        <h2>Admission Form</h2>
+    <table style="background-color: rgb(236, 236, 201); font-size: 25px;" width="100%">
+        <tr>
+            <td>
+                <div>
+                    <br><br><br>
+                <form action="/admission" method="post">
+                    <label for="Name">Name: </label>
+                    <input type="text" id="name" name="FIRST NAME" required>
+                    <input type="text" id="name" name="LAST NAME" required>
+                    <br><br>
+                    <label for="email">Email:</label>
+                    
+                    <input type="email" id="email" name="email" required>
+                    <br><br>
+
+                    <label for="Gender">Gender: </label>
+                    <input type="radio" name="Female">Female
+                    <input type="radio" name="Male">Male
+                    
+                    
+                  <br><br>
+                    <label for="phone no">Phone No:</label>
+                    
+                    <input type="text" name="phone no" required>
+                    <br><br>
+                    
+                    <label for="year">Current Year:</label><br>
+                    <input type="radio" id="year" name="year">1st Year.<br>
+                    <input type="radio" id="year" name="year">2nd Year.<br>
+                    <input type="radio" id="year" name="year">3rd Year.<br>
+                    <input type="radio" id="year" name="year">4th Year.<br>
+                    
+                  <br><br>
+                </form>
+            </div>
+            </td>
+
+            <td>
+                <form action="/admission" method="post">
+                <label for="room">Do you require hostel rooms? </label><br>
+                    <input type="radio" id="room" name="s">Yes
+                    <input type="radio" id="room" name="n">No
+                    
+                    <br><br>
+                <label for="choice">Choose your preference.</label><br>
+                <input type="radio" id="choice" name="Single room">Single room.<br>
+                <input type="radio" id="choice"name="No Room Needed">No Room Needed.<br>
+                <input type="radio" id="choice"name ="Shared Room">Shared Room.<br>
+                <br>
+                <label for="choice">Wanna see other attendees?</label><br>
+                <input type="radio" id="choice" name="Yes">Yes
+                <input type="radio" id="choice" name="No">No
+            </form>
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+</body>
